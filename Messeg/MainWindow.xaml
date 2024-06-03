@@ -1,0 +1,34 @@
+﻿<Window x:Class="Messeg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Messeg"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+        <StackPanel x:Name="startScreen" Visibility="Visible">
+            <TextBlock Text="Введите имя пользователя:"/>
+            <TextBox x:Name="usernameTextBox"/>
+            <Button Content="Создать новый чат" Click="CreateNewChat_Click"/>
+            <Button Content="Подключиться к существующему чату" Click="ConnectToChat_Click"/>
+        </StackPanel>
+
+        <StackPanel x:Name="chatScreen" Visibility="Collapsed">
+
+            <ListBox x:Name="chatListBox"/>
+
+            <ListBox x:Name="usersListBox" Margin="0 10" HorizontalAlignment="Left"/>
+            <ListBoxItem Content="Пользователь 1"/>
+            <ListBoxItem Content="Пользователь 2"/>
+            <ListBoxItem Content="Пользователь 3"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="messageTextBox"/>
+                <Button Content="Отправить" Click="SendMessage_Click"/>
+                <Button Content="Отключить" Click="Disconnect_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
